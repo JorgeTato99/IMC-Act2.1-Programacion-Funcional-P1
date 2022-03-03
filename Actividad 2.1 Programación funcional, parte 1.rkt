@@ -21,7 +21,6 @@
 ; sign:
 ; Given:
 ; Return:
-
 (define (sign n)
   (cond
     [(positive? n) 1]
@@ -43,7 +42,6 @@
 ; roots:
 ; Given:
 ; Return:
-
 (define (roots a b c)
   (/ (- (sqrt (- (* b b) (* 4 a c)) ) b) (* 2 a))
 )
@@ -91,7 +89,6 @@
 ; factorial:
 ; Given:
 ; Return:
-
 (define (factorial n)
   (if (zero? n) 1 (* n (factorial(- n 1))))
 )
@@ -123,7 +120,20 @@
 ; fib:
 ; Given:
 ; Return
+(define (fib n)
+  (cond
+    [(> n 1) (+ (fib(- n 1)) (fib(- n 2)))]
+    [else n]
+  ) ;Fin cond
+) ;Fin define
+
 (printf "Problema 8 [fib]: ~n")
+(printf "Entrada: 6 => ")
+(fib 6)
+(printf "Entrada: 10) => ")
+(fib 10)
+(printf "Entrada: 22 => ")
+(fib 22)
 (printf "~n")
 
 ; 9
