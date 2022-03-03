@@ -9,8 +9,11 @@
 )
 
 (printf "Problema 1 [fahrenheit-to-celcius]: ~n")
+(printf "Entrada: 212 => ")
 (fahrenheit-to-celcius 212)
+(printf "Entrada: 32 => ")
 (fahrenheit-to-celcius 32)
+(printf "Entrada: -40 => ")
 (fahrenheit-to-celcius -40)
 (printf "~n")
 
@@ -28,8 +31,11 @@
 )
 
 (printf "Problema 2 [sign]: ~n")
+(printf "Entrada: -5 => ")
 (sign -5)
+(printf "Entrada: 10 => ")
 (sign 10)
+(printf "Entrada: 0 => ")
 (sign 0)
 (printf "~n")
 
@@ -43,8 +49,11 @@
 )
 
 (printf "Problema 3 [roots]: ~n")
+(printf "Entrada: 2 4 2 => ")
 (roots 2 4 2)
+(printf "Entrada: 1 0 0 => ")
 (roots 1 0 0)
+(printf "Entrada: 4 5 1 => ")
 (roots 4 5 1)
 (printf "~n")
 
@@ -52,7 +61,30 @@
 ; bmi:
 ; Given:
 ; Return:
+(define (bmi W H)
+  
+  ; Fórmula: (/ W (* H H))
+  (define (bmin W H)
+    (/ W (* H H))
+  )
+  
+  (cond 
+    [(< (bmin W H) 20) "underweight"]
+    [(< (bmin W H) 25) "normal"]
+    [(< (bmin W H) 30) "obese1"]
+    [(< (bmin W H) 40) "obese2"]
+    [else "obese3"]
+  ) ;Fin Cond
+  
+) ;Fin define
+
 (printf "Problema 4 [bmi]: ~n")
+(printf "Entrada: 40 y 1.60 => ")
+(bmi 40 1.60)
+(printf "Entrada: 70 y 1.70 => ")
+(bmi 70 1.70)
+(printf "Entrada: 100 y 1.80 => ")
+(bmi 100 1.80)
 (printf "~n")
 
 ; 5
@@ -65,8 +97,11 @@
 )
 
 (printf "Problema 5 [factorial:]: ~n")
+(printf "Entrada: 0 => ")
 (factorial 0)
+(printf "Entrada: 5 => ")
 (factorial 5)
+(printf "Entrada: 40 => ")
 (factorial 40)
 (printf "~n")
 
