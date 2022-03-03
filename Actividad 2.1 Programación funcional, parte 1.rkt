@@ -113,7 +113,17 @@
 ; pow:
 ; Given:
 ; Return:
+(define (pow a b)
+  (expt a b)
+)
+
 (printf "Problema 7 [pow]: ~n")
+(printf "Entrada: 5 y 0 => ")
+(pow 5 0)
+(printf "Entrada: -5 y 3 => ")
+(pow -5 3)
+(printf "Entrada: 15 y 12 => ")
+(pow 15 12)
 (printf "~n")
 
 ; 8
@@ -140,7 +150,23 @@
 ; enlist:
 ; Given:
 ; Return:
+(define (enlist lista)
+  (define (iter lista enlista)
+    (if (= 0 (length lista))
+       (reverse enlista)
+       (iter (cdr lista) (cons (list (car lista)) enlista))
+    )
+  )
+  (iter lista '())
+)
+
 (printf "Problema 9 [enlist]: ~n")
+(printf "Entrada: '() => ")
+(enlist '())
+(printf "Entrada: '(a b c) => ")
+(enlist '(a b c))
+(printf "Entrada: '((1 2 3) 4 (5) 7 8) => ")
+(enlist '((1 2 3) 4 (5) 7 8))
 (printf "~n")
 
 ; 10
